@@ -13,6 +13,7 @@ let Detail = () => import('@/pages/Detail.vue');
 let NotFound = () => import('@/pages/NotFound.vue');
 let User = () => import('@/pages/User.vue');
 let Search = () => import('@/pages/Search.vue');
+let About = () => import('@/pages/About/About.vue');
 
 Vue.use(Router);
 
@@ -49,6 +50,11 @@ export function createRouter() {
                 path: '/404',
                 name: 'notFound',
                 component: NotFound
+            },
+            {
+                path: '/about',
+                name: 'about',
+                component: About
             }
         ]
     });
