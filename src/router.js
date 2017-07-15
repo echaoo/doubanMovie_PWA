@@ -8,7 +8,7 @@ import Router from 'vue-router';
 import * as types from './store/mutation-types';
 
 // 定义切割点，异步加载路由组件
-let Home = () => import('@/pages/Home.vue');
+let Home = () => import('@/pages/Movie/Home.vue');
 let Detail = () => import('@/pages/Detail.vue');
 let NotFound = () => import('@/pages/NotFound.vue');
 let User = () => import('@/pages/User.vue');
