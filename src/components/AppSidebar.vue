@@ -162,6 +162,7 @@ a
         line-height $app-sidebar-title-height
         background: $theme.primary
         text-align left
+        cursor pointer
 
     .app-sidebar-user
         padding 0 10px

@@ -192,7 +192,7 @@ export default {
                     altLeft: '',
                     svgLeft: '',
                     iconLeft: 'home',
-                    text: 'Home',
+                    text: '主页',
                     imageRight: '',
                     altRight: '',
                     svgRight: '',
@@ -203,23 +203,27 @@ export default {
                 blocks: [
                     {
                         // 子列表1
-                        sublistTitle: 'Sublist1',
+                        sublistTitle: '导航',
                         list: [
                             {
-                                text: 'Detail Page 1',
-                                icon: 'sentiment_satisfied',
-                                route: '/detail/1'
+                                text: '豆瓣电影',
+                                icon: 'movie',
+                                route: '/'
                             },
                             {
-                                text: 'Detail Page 2',
-                                image: 'https://github.com/google/material-design-icons/blob/master/social/2x_web/ic_mood_bad_black_48dp.png?raw=true',
-                                alt: 'mood-bad',
-                                route: '/detail/2'
+                                text: '豆瓣音乐',
+                                icon: 'music_video',
+                                route: '/404'
                             },
                             {
-                                text: 'Detail Page 3',
-                                svg: 'svg-sentiment-very-satisfied',
-                                route: '/detail/3'
+                                text: '豆瓣图书',
+                                icon: 'book',
+                                route: '/404'
+                            },
+                            {
+                                text: '关于',
+                                icon: 'info',
+                                route: '/about'
                             }
                         ]
                     }
