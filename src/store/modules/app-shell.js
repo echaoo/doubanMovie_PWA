@@ -120,7 +120,7 @@ export default {
                  *
                  * @type {string}
                  */
-                title: 'Lavas',
+                title: '豆瓣电影',
 
                 /**
                  * logo图标名称

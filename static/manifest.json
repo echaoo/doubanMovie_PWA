@@ -1,6 +1,6 @@
 {
-  "name": "doubanmovie_pwa",
-  "short_name": "doubanmovie_pwa",
+  "name": "豆瓣电影",
+  "short_name": "豆瓣电影",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",

@@ -30,7 +30,7 @@ export default {
     activated() {
         this.setAppHeader({
             show: true,
-            title: 'Lavas',
+            title: '豆瓣电影',
             showMenu: true,
             showBack: false,
             showLogo: true,
