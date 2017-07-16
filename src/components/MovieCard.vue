@@ -1,18 +1,13 @@
 <template>
-    <v-card>
-        <v-card-media :src="subject.images.large">
-        </v-card-media>
-        <v-card-title>
-            <div>
-                <h3>{{subject.title}}</h3>
-            </div>
-            <p class="star-box">
-                <span class="paper-star" v-if="subject.rating.average > 0">
-                  <Star class="star" :rating='subject.rating.average'></Star>
-                </span>
-                <span class='paper-rating'>{{subject.rating.average | fixNum}} </span>
-            </p>
-        </v-card-title>
+    <v-card class="card-container">
+        <div class='card-img' :style="'background-image: url('+subject.images.large+')'"></div>
+        <p class="movie-title">{{subject.title}}</p>
+        <p class="star-box">
+            <span class="paper-star" v-if="subject.rating.average > 0">
+                <Star class="star" :rating='subject.rating.average'></Star>
+            </span>
+            <span class='paper-rating'>{{subject.rating.average}}</span>
+        </p>
     </v-card>
 </template>
 
@@ -40,6 +35,26 @@
     };
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
+    .card-container
 
+        .card-img
+            width 100%
+            height 161px
+            background-size cover
+            margin-bottom 4px
+
+        .movie-title
+            width 100%
+            font-size 14px
+            text-overflow ellipsis
+            margin: 0
+            padding: 0 6px
+            height: 18px
+            line-height: 16px
+            overflow: hidden
+            white-space: nowrap
+
+        .star-box
+            color orange
 </style>

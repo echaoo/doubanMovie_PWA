@@ -1,8 +1,8 @@
 <template>
   <span class='star'>
-    <v-icon class='star-rate' value="star" v-for="n in ratingObj.star" :key="'star'+n"/>
-    <v-icon class='star-rate' value="star_half" v-for="n in ratingObj.half" :key="'half'+n"/>
-    <v-icon class='star-rate' value="star_border" v-for="n in ratingObj.left" :key="'left'+n"/>
+      <v-icon small class='orange--text' v-for="n in ratingObj.star" :key="'star'+n">star</v-icon>
+      <v-icon class='orange--text' v-for="n in ratingObj.half" :key="'half'+n">star_half</v-icon>
+      <v-icon class='orange--text' v-for="n in ratingObj.left" :key="'left'+n">star_border</v-icon>
   </span>
 </template>
 
@@ -15,7 +15,6 @@
                 const star = Math.floor(intNum / 2);
                 const half = intNum % 2;
                 const left = 5 - star - half;
-                console.log(this.rating, star, half, left);
                 return {
                     star,
                     half,
@@ -26,13 +25,11 @@
     };
 </script>
 
-<style lang="css" scoped>
-    .star {
-        display: flex;
-    }
+<style lang="stylus" scoped>
+    .star
+        display inline-flex
 
-    .star-rate {
-        font-size: inherit;
-        letter-spacing: inherit;
-    }
+        .icon
+            font-size 16px
+            letter-spacing -2px
 </style>

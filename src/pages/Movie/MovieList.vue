@@ -40,5 +40,8 @@
 </script>
 
 <style lang="stylus">
-
+    .layout
+        .flex
+            padding-right 8px
+            padding-left 8px
 </style>
