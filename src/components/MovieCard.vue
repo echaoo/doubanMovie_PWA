@@ -2,11 +2,14 @@
     <v-card class="card-container">
         <div class='card-img' :style="'background-image: url('+subject.images.large+')'"></div>
         <p class="movie-title">{{subject.title}}</p>
-        <p class="star-box">
-            <span class="paper-star" v-if="subject.rating.average > 0">
+        <p class="star-box" v-if="subject.rating.average > 0">
+            <span class="paper-star">
                 <Star class="star" :rating='subject.rating.average'></Star>
             </span>
             <span class='paper-rating'>{{subject.rating.average}}</span>
+        </p>
+        <p class="star-box" v-else>
+            <span class="empty">暂无评价</span>
         </p>
     </v-card>
 </template>
@@ -57,4 +60,10 @@
 
         .star-box
             color orange
+
+            .paper-star
+                vertical-align sub
+            .empty
+                height: 26px
+                display: inline-block
 </style>

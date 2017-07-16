@@ -26,6 +26,7 @@
                     (res) => {
                         console.log(res);
                         this.subjects = res.data.subjects;
+                        console.log(this.subjects)
                     }
                 )
             }
