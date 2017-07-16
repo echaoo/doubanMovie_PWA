@@ -1,14 +1,12 @@
 <template>
     <div>
-        <div class="content">
-            <h2>LAVAS</h2>
-            <h4>[ˈlɑ:vəz]</h4>
-        </div>
+        <movie-list></movie-list>
     </div>
 </template>
 
 <script>
 import {mapActions} from 'vuex';
+import MovieList from './MovieList.vue';
 
 export default {
     name: 'home',
@@ -43,6 +41,9 @@ export default {
         });
         this.activateBottomNav('home');
         this.showBottomNav();
+    },
+    components: {
+        MovieList
     }
 };
 </script>
