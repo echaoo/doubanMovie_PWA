@@ -5,7 +5,7 @@
 const baseUrl = '/api/'
 
 const request = {
-    allMovie: baseUrl + 'movie/coming_soon?city=北京'
+    allMovie: baseUrl + 'movie/in_theaters?city=北京'
 };
 
 module.exports = request;

@@ -1,7 +1,7 @@
 <template>
     <transition
         name="slide-down">
-        <header class="app-header-wrapper" v-show="show">
+        <header class="app-header-wrapper" v-show="show" v-bind:style="{opacity: opacity}">
             <div class="app-header-left">
                 <v-btn
                     icon
@@ -57,7 +57,8 @@ export default {
             'showLogo',
             'logoIcon',
             'title',
-            'actions'
+            'actions',
+            'opacity'
         ]),
         ...mapState('appShell', [
             'isPageSwitching'
