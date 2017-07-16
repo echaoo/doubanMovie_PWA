@@ -3,7 +3,9 @@
         <v-container>
             <v-layout row wrap>
                 <v-flex xs4 sm4 md3 lg2 v-for="(subject, index) in subjects" :key="index">
-                    <movie-card :subject="subject"></movie-card>
+                    <div v-on:click="handleClickMovie(subject.id)">
+                        <movie-card :subject="subject"></movie-card>
+                    </div>
                 </v-flex>
             </v-layout>
         </v-container>
@@ -29,6 +31,9 @@
                         console.log(this.subjects)
                     }
                 )
+            },
+            handleClickMovie(movieId) {
+                this.$router.push({name: 'detail', params: {id: movieId}})
             }
         },
         created() {
@@ -43,6 +48,7 @@
 <style lang="stylus">
     .layout
         .flex
-            padding-right 8px
-            padding-left 8px
+            padding-right 4px
+            padding-left 4px
+            overflow hidden
 </style>
