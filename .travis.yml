@@ -3,6 +3,7 @@ sudo: true
 node_js:
 - 7.3.0
 before_install:
+- openssl aes-256-cbc -K $encrypted_f2c2486815a1_key -iv $encrypted_f2c2486815a1_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
@@ -14,6 +15,6 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: scp -r dist/* root@zhangmengke.cn:/home/wwwroot/rtu.zhangmengke.cn/
+  script: scp -r dist/* root@lihuanyu.com:/var/www/douban.lihuanyu.com/
   on:
     branch: master
