@@ -1,0 +1,20 @@
+language: node_js
+sudo: true
+node_js:
+- 7.3.0
+before_install:
+- openssl aes-256-cbc -K $encrypted_f2c2486815a1_key -iv $encrypted_f2c2486815a1_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- npm install
+script:
+- npm run test
+- npm run build
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scp -r dist/* blog@lihuanyu.com:/var/www/douban.lihuanyu.com/
+  on:
+    branch: master

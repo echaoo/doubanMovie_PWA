@@ -12,7 +12,7 @@
         </v-card>
 
         <h3 class="sub-title">其它说明</h3>
-        <p class="sub-description">本项目参考了<a href="http://vdo.ralfz.com">Vdo</a>，主要借鉴了其外观和功能设计，代码实现上有一定区别，想尝试本项目但基础一般的同学可以学习上面的Vdo项目。<br>本项目主要目的是尝试使用<a href="https://lavas.baidu.com/">Lavas</a>（百度出品的一套基于Vue的PWA解决方案）进行PWA尝试开发。关于PWA，可以通过上面的Lavas进行了解。</p>
+        <p class="sub-description">本项目参考了<a href="http://vdo.ralfz.com">Vdo</a>，主要借鉴了其外观和功能设计，代码实现上有一定区别，想尝试本项目但基础一般的同学可以先学习上面的Vdo项目。<br>本项目主要目的是尝试使用<a href="https://lavas.baidu.com/">Lavas</a>（百度出品的一套基于Vue的PWA解决方案）进行PWA尝试开发。关于PWA，可以通过上面的Lavas进行了解。</p>
 
     </div>
 </template>
