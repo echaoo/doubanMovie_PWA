@@ -42,8 +42,7 @@
                         icon: 'search',
                         route: '/search'
                     }
-                ],
-                opacity: 1
+                ]
             });
             this.activateBottomNav('home');
             this.showBottomNav();

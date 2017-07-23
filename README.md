@@ -1,4 +1,6 @@
-# doubanmovie_pwa
+# Echao豆瓣
+
+[![Build Status](https://travis-ci.org/echaoo/doubanMovie_PWA.svg?branch=master)](https://travis-ci.org/echaoo/doubanMovie_PWA)
 
 > 这是一个 pwa 项目
 
