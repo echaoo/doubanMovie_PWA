@@ -1,6 +1,6 @@
 <template>
   <span class='star'>
-      <v-icon small class='orange--text' v-for="n in ratingObj.star" :key="'star'+n">star</v-icon>
+      <v-icon style="font-size: 16px" class='orange--text' v-for="n in ratingObj.star" :key="'star'+n">star</v-icon>
       <v-icon class='orange--text' v-for="n in ratingObj.half" :key="'half'+n">star_half</v-icon>
       <v-icon class='orange--text' v-for="n in ratingObj.left" :key="'left'+n">star_border</v-icon>
   </span>
@@ -30,6 +30,6 @@
         display inline-flex
 
         .icon
-            font-size 16px
+            /*font-size 16px*/
             letter-spacing -2px
 </style>
