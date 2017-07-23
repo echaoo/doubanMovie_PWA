@@ -18,7 +18,7 @@
         </div>
 
         <div class="star">
-            <Star :rating="movie.rating.average"></Star>
+            <Star :rating="movie.rating.average" :star-size="24"></Star>
         </div>
         <div class="info">
             <p class="info-content"><span class="info-title">原名</span><span
