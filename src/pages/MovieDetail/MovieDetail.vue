@@ -101,6 +101,11 @@
                 },
             };
         },
+        filters: {
+            arr2string(value) {
+                return value.join(' / ')
+            }
+        },
         components: {
             Star
         },

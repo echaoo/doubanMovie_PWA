@@ -11,6 +11,7 @@ import App from './App.vue';
 import Icon from 'vue-awesome/components/Icon.vue';
 
 Vue.use(Vuetify);
+// Vue.filter('arr2string', value => value.join(' / '));
 Vue.component('icon', Icon);
 
 Vue.config.productionTip = false;
