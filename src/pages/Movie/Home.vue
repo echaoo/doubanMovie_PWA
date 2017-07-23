@@ -1,6 +1,6 @@
 <template>
     <div>
-        <movie-list :move-list="moveList"></movie-list>
+        <movie-list :move-lis="moveList"></movie-list>
     </div>
 </template>
 
@@ -27,6 +27,7 @@
         },
         async asyncData() {
             await new Promise((resolve, reject) => {
+                console.log(123);
                 setTimeout(resolve, 500);
             });
         },
