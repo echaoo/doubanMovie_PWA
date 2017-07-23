@@ -130,8 +130,7 @@
                         icon: 'search',
                         route: '/search'
                     }
-                ],
-                opacity: 0.5
+                ]
             });
             axios.get(API.subject + '/' + this.$route.params.id).then(
                 res => {
