@@ -1,0 +1,19 @@
+language: node_js
+sudo: true
+node_js:
+- 7.3.0
+before_install:
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- npm install
+script:
+- npm run test
+- npm run build
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scp -r dist/* root@zhangmengke.cn:/home/wwwroot/rtu.zhangmengke.cn/
+  on:
+    branch: master
