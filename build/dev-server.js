@@ -20,6 +20,7 @@ const express = require('express');
 const webpack = require('webpack');
 const proxyMiddleware = require('http-proxy-middleware');
 const webpackConfig = require('./webpack.dev.conf');
+let mockMapper = require('./mockMapper');
 
 // 默认调试服务器端口
 let port = process.env.PORT || config.dev.port;
@@ -50,7 +51,11 @@ compiler.plugin('compilation', function (compilation) {
 });
 
 // 指定需要代理的请求列表
-let proxyTable = config.dev.proxyTable;
+let isProxyOpen = config.dev.isProxyOpen || false;
+let proxyTable = {};
+if (isProxyOpen) {
+    proxyTable = config.dev.proxyTable;
+}
 
 // 代理请求
 Object.keys(proxyTable).forEach(function (context) {
@@ -75,6 +80,9 @@ app.use(hotMiddleware);
 // 纯静态资源服务
 let staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory);
 app.use(staticPath, express.static('./static'));
+
+// 处理mock功能
+mockMapper(app);
 
 let uri = 'http://localhost:' + port;
 
