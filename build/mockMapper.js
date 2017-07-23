@@ -8,10 +8,8 @@
  * @param{Object} app express实例
  */
 function mockMapper(app) {
-    app.use('/mock/api/movie/in_theaters', (req, res) => {
-        res.send(require('../mock/movie.json'));
-    });
-    app.use('/mock/api/movie/subject/*', (req, res) => {res.send(require('../mock/movieDetail.json'))})
+    app.use('/mock/api/movie/in_theaters', (req, res) => {res.send(require('../mock/movie.json'))});
+    app.use('/mock/api/movie/subject/*', (req, res) => {res.send(require('../mock/movieDetail.json'))});
 }
 
 module.exports = mockMapper;
