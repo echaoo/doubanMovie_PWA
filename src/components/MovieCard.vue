@@ -60,6 +60,7 @@
 
         .star-box
             color orange
+            margin-bottom 10px
 
             .paper-star
                 vertical-align sub
