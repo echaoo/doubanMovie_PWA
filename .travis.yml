@@ -15,6 +15,6 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: scp -r dist/* root@lihuanyu.com:/var/www/douban.lihuanyu.com/
+  script: scp -r dist/* blog@lihuanyu.com:/var/www/douban.lihuanyu.com/
   on:
     branch: master
