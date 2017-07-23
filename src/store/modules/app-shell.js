@@ -155,14 +155,7 @@ export default {
                  *
                  * @type {Array}
                  */
-                actions: [],
-
-                /**
-                 * 是否透明
-                 *
-                 * @type {Number}
-                 */
-                opacity: 1
+                actions: []
             },
             actions: {
 
