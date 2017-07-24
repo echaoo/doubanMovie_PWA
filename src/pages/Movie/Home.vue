@@ -1,6 +1,6 @@
 <template>
     <div>
-        <movie-list :move-lis="moveList"></movie-list>
+        <movie-list></movie-list>
     </div>
 </template>
 

@@ -29,8 +29,18 @@ const mutations = {
 };
 
 function getMovieList() {
+    if (localStorage.getItem('updateMovieListTime') !== null) {
+        let time = new Date().getTime() - parseInt(localStorage.getItem('updateMovieListTime'));
+        if (time < 86400) {
+            if (localStorage.getItem('movieList') !== null) {
+                return Promise.resolve(JSON.parse(localStorage.getItem('movieList')));
+            }
+        }
+    }
     return axios.get(API.allMovie).then(
         res => {
+            localStorage.setItem('movieList', JSON.stringify(res.data.subjects));
+            localStorage.setItem('updateMovieListTime', new Date().getTime());
             return Promise.resolve(res.data.subjects);
         },
         () => {
