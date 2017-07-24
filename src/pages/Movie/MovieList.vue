@@ -2,7 +2,7 @@
     <div class="movie-wrap">
         <v-container>
             <v-layout row wrap>
-                <v-flex xs4 sm4 md3 lg2 v-for="(subject, index) in subjects" :key="index">
+                <v-flex xs4 sm4 md3 lg2 v-for="(subject, index) in movieList" :key="index">
                     <div v-on:click="handleClickMovie(subject.id)">
                         <movie-card :subject="subject"></movie-card>
                     </div>
@@ -14,30 +14,25 @@
 
 <script>
     import API from '../../config/request';
+    import {mapActions, mapState} from 'vuex';
     import axios from 'axios';
     import MovieCard from '../../components/MovieCard.vue';
     export default {
-        data() {
-            return {
-                subjects: []
-            }
+        computed: {
+            ...mapState('appMovie', [
+                'movieList'
+            ])
         },
         methods: {
-            loadData() {
-                axios.get(API.allMovie).then(
-                    (res) => {
-                        console.log(res);
-                        this.subjects = res.data.subjects;
-                        console.log(this.subjects)
-                    }
-                )
-            },
+            ...mapActions('appMovie', [
+                'updateMovieList'
+            ]),
             handleClickMovie(movieId) {
                 this.$router.push({name: 'detail', params: {id: movieId}})
             }
         },
         created() {
-            this.loadData();
+            this.updateMovieList();
         },
         components: {
             MovieCard

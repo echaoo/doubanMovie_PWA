@@ -134,7 +134,8 @@
             });
             axios.get(API.subject + '/' + this.$route.params.id).then(
                 res => {
-                    this.movie = res.data
+                    this.movie = res.data;
+                    this.setAppHeader({title: this.movie.title});
                 }
             )
         },
