@@ -4,6 +4,9 @@
 
 > 这是一个 pwa 项目
 
+### 效果图
+![GIF 图片](/docs/img/preview.gif)
+
 ## npm 相关命令
 
 ``` bash
