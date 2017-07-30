@@ -17,8 +17,23 @@ let state = {
 
 const actions = {
     async updateMovieList({commit}) {
-        let data = await getMovieList();
-        commit(types.UPDATE_MOVIE_DATA, data);
+        let data = [];
+        if (localStorage.getItem('updateMovieListTime') !== null) {
+            if (localStorage.getItem('movieList') !== null) {
+                data = JSON.parse(localStorage.getItem('movieList'));
+                commit(types.UPDATE_MOVIE_DATA, data);
+            }
+            let time = new Date().getTime() - parseInt(localStorage.getItem('updateMovieListTime'));
+            if (time > 3600000) {
+                data = await getMovieList();
+            }
+        } else {
+            data = await getMovieList();
+        }
+        // 如果请求不失败，把数据更新，否则不更新，有缓存就用缓存，没有缓存就为空
+        if (data.length !== 0) {
+            commit(types.UPDATE_MOVIE_DATA, data);
+        }
     }
 };
 
@@ -29,14 +44,6 @@ const mutations = {
 };
 
 function getMovieList() {
-    if (localStorage.getItem('updateMovieListTime') !== null) {
-        let time = new Date().getTime() - parseInt(localStorage.getItem('updateMovieListTime'));
-        if (time < 86400) {
-            if (localStorage.getItem('movieList') !== null) {
-                return Promise.resolve(JSON.parse(localStorage.getItem('movieList')));
-            }
-        }
-    }
     return axios.get(API.allMovie).then(
         res => {
             localStorage.setItem('movieList', JSON.stringify(res.data.subjects));
