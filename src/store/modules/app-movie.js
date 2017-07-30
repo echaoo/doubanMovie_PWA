@@ -30,7 +30,10 @@ const actions = {
         } else {
             data = await getMovieList();
         }
-        commit(types.UPDATE_MOVIE_DATA, data);
+        // 如果请求不失败，把数据更新，否则不更新，有缓存就用缓存，没有缓存就为空
+        if (data.length !== 0) {
+            commit(types.UPDATE_MOVIE_DATA, data);
+        }
     }
 };
 
