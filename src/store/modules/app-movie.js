@@ -17,16 +17,16 @@ let state = {
 
 const actions = {
     async updateMovieList({commit}) {
-        let data;
+        let data = [];
         if (localStorage.getItem('updateMovieListTime') !== null) {
-            let time = new Date().getTime() - parseInt(localStorage.getItem('updateMovieListTime'));
-            if (time < 3600000) {
-                if (localStorage.getItem('movieList') !== null) {
-                    data = JSON.parse(localStorage.getItem('movieList'));
-                    commit(types.UPDATE_MOVIE_DATA, data);
-                }
+            if (localStorage.getItem('movieList') !== null) {
+                data = JSON.parse(localStorage.getItem('movieList'));
+                commit(types.UPDATE_MOVIE_DATA, data);
             }
-            data = await getMovieList();
+            let time = new Date().getTime() - parseInt(localStorage.getItem('updateMovieListTime'));
+            if (time > 3600000) {
+                data = await getMovieList();
+            }
         } else {
             data = await getMovieList();
         }
